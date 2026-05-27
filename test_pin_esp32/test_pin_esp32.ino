@@ -131,7 +131,7 @@ void testAllPixelsOn() {
   
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      dmd.writePixel(x, y, GRAPHICS_OR);
+      dmd.writePixel(x, y, GRAPHICS_OR, 1);
     }
   }
   
@@ -147,7 +147,7 @@ void testCheckerboard() {
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
       if ((x + y) % 2 == 0) {
-        dmd.writePixel(x, y, GRAPHICS_OR);
+        dmd.writePixel(x, y, GRAPHICS_OR, 1);
       }
     }
   }
@@ -163,7 +163,7 @@ void testHorizontalLines() {
   
   for (int y = 0; y < height; y += 2) {
     for (int x = 0; x < width; x++) {
-      dmd.writePixel(x, y, GRAPHICS_OR);
+      dmd.writePixel(x, y, GRAPHICS_OR, 1);
     }
   }
   
@@ -178,7 +178,7 @@ void testVerticalLines() {
   
   for (int x = 0; x < width; x += 2) {
     for (int y = 0; y < height; y++) {
-      dmd.writePixel(x, y, GRAPHICS_OR);
+      dmd.writePixel(x, y, GRAPHICS_OR, 1);
     }
   }
   
@@ -205,7 +205,7 @@ void testBrightness() {
   int height = 16 * DISPLAYS_HIGH;
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      dmd.writePixel(x, y, GRAPHICS_OR);
+      dmd.writePixel(x, y, GRAPHICS_OR, 1);
     }
   }
   
@@ -217,13 +217,13 @@ void testIndividualPixels() {
   dmd.clearScreen(true);
   
   // Draw corners
-  dmd.writePixel(0, 0, GRAPHICS_OR);
-  dmd.writePixel((32 * DISPLAYS_WIDE) - 1, 0, GRAPHICS_OR);
-  dmd.writePixel(0, (16 * DISPLAYS_HIGH) - 1, GRAPHICS_OR);
-  dmd.writePixel((32 * DISPLAYS_WIDE) - 1, (16 * DISPLAYS_HIGH) - 1, GRAPHICS_OR);
+  dmd.writePixel(0, 0, GRAPHICS_OR, 1);
+  dmd.writePixel((32 * DISPLAYS_WIDE) - 1, 0, GRAPHICS_OR, 1);
+  dmd.writePixel(0, (16 * DISPLAYS_HIGH) - 1, GRAPHICS_OR, 1);
+  dmd.writePixel((32 * DISPLAYS_WIDE) - 1, (16 * DISPLAYS_HIGH) - 1, GRAPHICS_OR, 1);
   
   // Draw center
-  dmd.writePixel(16 * DISPLAYS_WIDE / 2, 8, GRAPHICS_OR);
+  dmd.writePixel(16 * DISPLAYS_WIDE / 2, 8, GRAPHICS_OR, 1);
   
   Serial.println("  → Display should show 4 corner pixels + center pixel\n");
 }
